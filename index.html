@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT应用资产管理系统 · ITAM Platform</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app" id="app">
+  <!-- 侧边导航 -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-logo">IT</div>
+      <div class="brand-text">
+        <strong>应用资产管理系统</strong>
+        <span>ITAM Platform v1.0</span>
+      </div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="sidebar-foot">
+      <div class="storage-tip">演示数据保存在浏览器本地</div>
+      <button class="btn btn-mini btn-sidebar" id="btnResetSide">恢复演示数据</button>
+    </div>
+  </aside>
+
+  <!-- 主区域 -->
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn" id="menuToggle" title="折叠 / 展开导航">☰</button>
+      <div class="crumb">
+        <span id="crumbGroup">工作台</span>
+        <i>/</i>
+        <strong id="crumbName">可视化仪表盘</strong>
+      </div>
+      <div class="top-search">
+        <span class="search-ico">🔍</span>
+        <input id="globalSearch" type="text" placeholder="全局搜索：应用名称 / 编号 / 负责人 / 拼音首字母…">
+        <div class="search-panel" id="searchPanel"></div>
+      </div>
+      <div class="top-right">
+        <div class="role-switch">
+          <label>当前角色</label>
+          <select id="roleSelect" title="切换角色可体验精细化权限"></select>
+        </div>
+        <button class="icon-btn" id="btnNotify" title="预警消息">🔔<span class="dot" id="notifyDot">0</span></button>
+        <div class="user">
+          <div class="avatar" id="userAvatar">张</div>
+          <div class="user-meta">
+            <strong id="userName">张伟</strong>
+            <span id="userRole">资产管理员</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content" id="view"></main>
+  </div>
+</div>
+
+<!-- 抽屉（详情 / 表单） -->
+<div class="drawer-mask" id="drawerMask"></div>
+<aside class="drawer" id="drawer"><div class="drawer-inner" id="drawerBody"></div></aside>
+
+<!-- 弹窗 & 提示 -->
+<div class="modal-mask" id="modalMask"><div class="modal" id="modal"></div></div>
+<div class="toast-wrap" id="toastWrap"></div>
+<div class="popover" id="notifyPanel"></div>
+
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/view-assets.js"></script>
+<script src="js/view-config.js"></script>
+<script src="js/view-extra.js"></script>
+</body>
+</html>
